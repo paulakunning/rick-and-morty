@@ -8,5 +8,23 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       primaryKey: true,
     },
+    name :{
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    species: {
+      type: DataTypes.STRING
+    }, 
+    origin : {
+      type:DataTypes.STRING,
+    }, 
+    image :{
+      type: DataTypes.STRING,
+    },
+    created: {
+      type: DataTypes.BOOLEAN,
+      allowNull: false,
+      defaultValue: true,
+    }
   });
 };
