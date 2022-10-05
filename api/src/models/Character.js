@@ -24,9 +24,11 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
     },
     created: {
-      type: DataTypes.BOOLEAN,
+      type: DataTypes.DATEONLY,
+      defaultValue: DataTypes.NOW,
       allowNull: false,
-      defaultValue: true,
     }
+  }, {
+    timestamps: false
   });
 };

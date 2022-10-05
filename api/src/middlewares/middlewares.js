@@ -9,6 +9,7 @@ const getApiInfo = async () => {
     name: c.name,
     species: c.species,
     origin: c.origin.name,
+    created: c.created,
     image: c.image
    }
    return char
