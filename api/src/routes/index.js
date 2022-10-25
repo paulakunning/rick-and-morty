@@ -24,7 +24,8 @@ router.get('/episodes', async (req, res) => {
         const epEach = epApi.data.results.forEach (e => {
             Episode.findOrCreate({
                 where :{
-                    name: e.name
+                    id: e.id,
+                    name: e.name,
                 }
             })
         })
@@ -40,7 +41,7 @@ router.get('/character/:id', async (req, res) => {
     const { id } = req.params
     const allCharacters = await getAllCharacters();
     if(id){
-        let charId = await allCharacters.filter( c => c.id.toString() === id)
+        let charId = allCharacters.filter( c => c.id.toString() === id)
         charId.length? res.status(200).json(charId): res.status(400).send("No se encontró un personaje con ese id")
     }
 })
